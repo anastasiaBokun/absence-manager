@@ -1,11 +1,11 @@
-import AbsenceGrid from './components/AbsenceGrid/AbsenceGrid';
+import DataLayer from './components/DataLayer/DataLayer';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <div>
-        <AbsenceGrid />
+        <DataLayer />
       </div>
     </div>
   );
