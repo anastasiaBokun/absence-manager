@@ -1,20 +1,24 @@
 import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
-
-const rows: GridRowsProp = [
-  { id: 1, col1: 'R1C1', col2: 'R1C2' },
-  { id: 2, col1: 'R2C1', col2: 'R2C2' },
-  { id: 3, col1: 'R3C1', col2: 'R3C2' }
-];
+import type { ExtendedAbsence } from '../DataLayer/types';
 
 const columns: GridColDef[] = [
-  { field: 'col1', headerName: 'Column 1', width: 150 },
-  { field: 'col2', headerName: 'Column 2', width: 150 }
+  { field: 'memberName', headerName: 'Name', width: 150 },
+  { field: 'type', headerName: 'Type of Absence', width: 150 },
+  { field: 'period', headerName: 'Period', width: 200 },
+  { field: 'memberNote', headerName: 'Member Note', width: 250 },
+  { field: 'status', headerName: 'Status', width: 150 },
+  { field: 'admitterNote', headerName: 'Admitter note', width: 250 }
 ];
 
-const DataTable = () => {
+interface DataTableProps {
+  absences: ExtendedAbsence[];
+}
+
+const DataTable = ({ absences }: DataTableProps) => {
+  const rows: GridRowsProp = absences;
   return (
-    <div style={{ height: 400, width: '100%' }}>
-      <DataGrid rows={rows} columns={columns} pageSize={5} rowsPerPageOptions={[5]} />
+    <div style={{ height: 700, width: '100%' }}>
+      <DataGrid rows={rows} columns={columns} pageSize={10} rowsPerPageOptions={[10]} />
     </div>
   );
 };
