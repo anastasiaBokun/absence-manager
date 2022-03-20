@@ -6,6 +6,8 @@ import { fetchAbsences } from '../../store/actions/absences';
 import { RootState } from '../../store/types';
 import Header from '../Header/Header';
 import { Layout } from './styles';
+import Loading from '../Loading/Loading';
+import Error from '../Error/Error';
 
 const DataLayer = () => {
   const absenceData: ExtendedAbsence[] = useSelector((state: RootState) => state.absenceData);
@@ -22,7 +24,7 @@ const DataLayer = () => {
     <main>
       <Layout>
         <Header />
-        <AbsenceGrid absences={absenceData} />
+        {isLoading ? <Loading /> : error ? <Error /> : <AbsenceGrid absences={absenceData} />}
       </Layout>
     </main>
   );
