@@ -42,5 +42,5 @@ You can also hide and show columns using the same menu which you can use for fil
 
 For reading Member Notes and Admitter Notes which are too long to fot in the table - just hover the beginning of the note in the table and read the full text, that approach will make the user able to read noted of almost unlimited size.
 
-While records are loaded you'll be able to see the loading screen. You'll be able to see an error message in case of loading error. 
+While records are loaded you'll be able to see the loading screen. You'll be able to see an error message in case of loading error. If there are no records, you'll see a screen with a specific message.
 

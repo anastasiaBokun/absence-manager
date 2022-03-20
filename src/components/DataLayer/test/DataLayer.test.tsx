@@ -37,8 +37,8 @@ describe('DataLayer', () => {
     };
     renderDataLayer(loadingState);
 
-    const absenceGrid = screen.getByText('Loading...');
-    expect(absenceGrid).toBeInTheDocument();
+    const loadingScreen = screen.getByText('Loading...');
+    expect(loadingScreen).toBeInTheDocument();
   });
 
   test('renders error screen', () => {
@@ -49,7 +49,18 @@ describe('DataLayer', () => {
     };
     renderDataLayer(errorState);
 
-    const absenceGrid = screen.getByText('Ooops! Something went wrong!');
-    expect(absenceGrid).toBeInTheDocument();
+    const errorScreen = screen.getByText('Ooops! Something went wrong!');
+    expect(errorScreen).toBeInTheDocument();
+  });
+
+  test('renders empty screen', () => {
+    const emptyState = {
+      absenceData: [],
+      isLoading: false
+    };
+    renderDataLayer(emptyState);
+
+    const emptyScreen = screen.getByText('There are no absence records to show');
+    expect(emptyScreen).toBeInTheDocument();
   });
 });
