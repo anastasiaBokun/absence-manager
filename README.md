@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+# Getting Started with Absence Manager App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The app was created as a coding challenge for the Crewmeister team.
 
-## Available Scripts
+## How to run the project
 
-In the project directory, you can run:
+Clone the repository:
 
-### `npm start`
+#### `git clone https://github.com/anastasiaBokun/absence-manager`
+
+Then start the project in the project directory with a script
+
+### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## How to run the tests
 
-### `npm test`
+Run this script in the project directory:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `yarn test`
 
-### `npm run build`
+Launches the test runner in the interactive watch mode.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## App description
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+App is based on DataGrid component from MaterialUI. Records are loaded locally from files "absences.json" and "members.json" which are located in public directory. I tried to keep the app both simple and functional. 
 
-### `npm run eject`
+### Features and functionality: 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Pagination: on the start of the app ypu will see a list of ten first records. To paginate press the arrow button on right bottom of the screen.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Near the pagination button you will see a total number of absences and which of them are shown now.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Filtering: Filtering is available for all the columns, to activate column filters hover the column header, press the menu button (button consists of three points on the right of hovered column header), choose option "Filter" in drop-down list. Here you can set up filter (select column by which you need to filter, add filter value and select filtering operator).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Sorting is available for all the columns. To sort hover the header of column by which you need to sort records and press the arrow button on the right of column name.
 
-## Learn More
+You can also hide and show columns using the same menu which you can use for filtering. Selecting option "Hide" in drop-down will hide the selected column, option "SHow columns" will open a pop-up with a list of hidden and shown columns.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+For reading Member Notes and Admitter Notes which are too long to fot in the table - just hover the beginning of the note in the table and read the full text, that approach will make the user able to read noted of almost unlimited size.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+While records are loaded you'll be able to see the loading screen. You'll be able to see an error message in case of loading error. 
+
