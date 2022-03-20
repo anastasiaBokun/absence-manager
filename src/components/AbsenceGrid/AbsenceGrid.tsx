@@ -4,7 +4,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Chip from '@mui/material/Chip';
 import SickIcon from '@mui/icons-material/Sick';
 import LocalAirportIcon from '@mui/icons-material/LocalAirport';
-import { Note } from './styles';
+import { Note, GridLayout } from './styles';
 
 const columns: GridColDef[] = [
   { field: 'memberName', headerName: 'Name', width: 100, minWidth: 80, flex: 1 },
@@ -77,9 +77,15 @@ interface DataTableProps {
 const DataTable = ({ absences }: DataTableProps) => {
   const rows: GridRowsProp = absences;
   return (
-    <div style={{ height: 700, width: '100%' }}>
-      <DataGrid rows={rows} columns={columns} pageSize={10} rowsPerPageOptions={[10]} />
-    </div>
+    <GridLayout>
+      <DataGrid
+        autoHeight={true}
+        rows={rows}
+        columns={columns}
+        pageSize={10}
+        rowsPerPageOptions={[10]}
+      />
+    </GridLayout>
   );
 };
 

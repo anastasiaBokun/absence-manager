@@ -4,6 +4,8 @@ import type { ExtendedAbsence } from './types';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchAbsences } from '../../store/actions/absences';
 import { RootState } from '../../store/types';
+import Header from '../Header/Header';
+import { Layout } from './styles';
 
 const DataLayer = () => {
   const absenceData: ExtendedAbsence[] = useSelector((state: RootState) => state.absenceData);
@@ -18,9 +20,10 @@ const DataLayer = () => {
 
   return (
     <main>
-      <div>
+      <Layout>
+        <Header />
         <AbsenceGrid absences={absenceData} />
-      </div>
+      </Layout>
     </main>
   );
 };
