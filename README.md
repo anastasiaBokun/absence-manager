@@ -23,6 +23,9 @@ Run this script in the project directory:
 
 Launches the test runner in the interactive watch mode.
 
+## App is also published on GitHub Pages and is availible via link:
+
+https://anastasiabokun.github.io/absence-manager/
 
 ## App description
 
