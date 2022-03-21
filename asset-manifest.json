@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/absence-manager/static/css/main.073c9b0a.css",
+    "main.js": "/absence-manager/static/js/main.de8845e0.js",
+    "static/js/787.5c02affc.chunk.js": "/absence-manager/static/js/787.5c02affc.chunk.js",
+    "index.html": "/absence-manager/index.html",
+    "main.073c9b0a.css.map": "/absence-manager/static/css/main.073c9b0a.css.map",
+    "main.de8845e0.js.map": "/absence-manager/static/js/main.de8845e0.js.map",
+    "787.5c02affc.chunk.js.map": "/absence-manager/static/js/787.5c02affc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.de8845e0.js"
+  ]
+}
