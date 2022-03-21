@@ -6,9 +6,7 @@ import { fetchAbsences } from '../../store/actions/absences';
 import { RootState } from '../../store/types';
 import Header from '../Header/Header';
 import { Layout } from './styles';
-import Loading from '../Loading/Loading';
-import Error from '../Error/Error';
-import Empty from '../Empty/Empty';
+import MessageScreen from '../MessageScreen/MessageScreen';
 
 const DataLayer = () => {
   const absenceData: ExtendedAbsence[] = useSelector((state: RootState) => state.absenceData);
@@ -21,19 +19,13 @@ const DataLayer = () => {
     dispatch(fetchAbsences());
   }, []);
 
+  const mode = isLoading ? 'loading' : error ? 'error' : !absenceData?.length ? 'empty' : null;
+
   return (
     <main>
       <Layout>
         <Header />
-        {isLoading ? (
-          <Loading />
-        ) : error ? (
-          <Error />
-        ) : absenceData?.length ? (
-          <AbsenceGrid absences={absenceData} />
-        ) : (
-          <Empty />
-        )}
+        {mode ? <MessageScreen mode={mode} /> : <AbsenceGrid absences={absenceData} />}
       </Layout>
     </main>
   );

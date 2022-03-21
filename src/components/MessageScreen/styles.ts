@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LoadingLayout = styled.div`
+export const MessageLayout = styled.div`
   display: flex;
   height: 600px;
   align-items: center;
